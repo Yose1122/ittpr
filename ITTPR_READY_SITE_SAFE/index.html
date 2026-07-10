@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ITTPR — Profile Vibe Store</title>
+  <link rel="stylesheet" href="ittpr_style.css" />
+</head>
+<body>
+  <!--
+    FILES / PATHS:
+
+    FONT:
+    fonts/got-heroin.ttf
+
+    MAIN IMAGES:
+    assets/banner.png
+    assets/logo-square.png
+
+    PACKAGE PREVIEW IMAGES:
+    assets/previews/basic-1.png
+    assets/previews/basic-2.png
+    assets/previews/standard-1.png
+    assets/previews/standard-2.png
+    assets/previews/premium-1.png
+    assets/previews/premium-2.png
+
+    VIDEO:
+    assets/videos/packages-difference.mp4
+    assets/videos/packages-poster.png
+
+    WORKS:
+    assets/works/work-1.png
+    assets/works/work-2.png
+    assets/works/work-3.png
+    assets/works/work-4.png
+    assets/works/work-5.png
+    assets/works/work-6.png
+
+    IMPORTANT:
+    This is a manual bank-transfer system.
+    Form submit is front-end only until you connect it to Tally / Formspree / Netlify Forms / backend.
+  -->
+
+  <main class="page" id="storePage">
+    <header class="hero">
+      <img src="assets/banner.png" alt="ITTPR banner" />
+    </header>
+
+    <section class="main-layout">
+      <aside class="side">
+        <nav class="langs" aria-label="Language selector">
+          <button class="lang-button" type="button" data-lang="ar">AR</button>
+          <button class="lang-button active" type="button" data-lang="en">EN</button>
+          <button class="lang-button" type="button" data-lang="ru">RU</button>
+          <button class="lang-button" type="button" data-lang="ja">JP</button>
+        </nav>
+
+        <nav class="menu-note" aria-label="Menu notes">
+          <a class="section-link active" href="#shop" data-section="shop">SHOP</a>
+          <a class="section-link" href="#packages" data-section="packages">PACKAGES</a>
+          <a class="section-link" href="#accounts" data-section="accounts">ACCOUNTS</a>
+          <a class="section-link" href="#about" data-section="about">ABOUT</a>
+        </nav>
+
+        <img class="side-logo" src="assets/logo-square.png" alt="ITTPR logo" />
+
+        <section class="store-copy" id="about">
+          <p>ITTPR is for people who are tired of paying every month for the same boring link page.</p>
+
+          <p>
+            Instead of renting a plain profile with a few buttons, you get a page that actually feels like you.
+            Inspired by old-school internet profiles, personal homepages, MySpace-era layouts,
+            and the weird charm of the early web.
+          </p>
+
+          <p>
+            No monthly subscription. No generic template that looks like everyone else’s.
+            Just one custom profile built around your links, photos, interests, colors, and overall vibe.
+          </p>
+
+          <p class="store-copy-ending">
+            We don’t make another account page.<br />
+            We build the version people remember.
+          </p>
+        </section>
+
+        <div class="left-separator"></div>
+
+        <div class="accounts" id="accounts">
+          <a href="https://instagram.com/" target="_blank"><span>Instagram</span><b>@ittpr</b></a>
+          <a href="https://x.com/" target="_blank"><span>X</span><b>@ittpr</b></a>
+          <a href="https://www.tiktok.com/@ittpr" target="_blank"><span>TikTok</span><b>@ittpr</b></a>
+          <a href="mailto:contact@ittpr.net"><span>Email</span><b>contact@ittpr.net</b></a>
+        </div>
+
+        <nav class="works-entry" aria-label="Works page">
+          <a href="#works" id="openWorks">WORKS</a>
+          <span>CLIENT ARCHIVE</span>
+        </nav>
+      </aside>
+
+      <div class="v-line"></div>
+
+      <section class="shop" id="shop">
+        <section class="package-panel" id="packages">
+          <div class="package-switcher">
+            <button class="arrow" id="prevBtn" aria-label="Previous package">‹</button>
+
+            <div class="package-title-block" id="packageTitleBlock" role="button" tabindex="0" aria-label="Open order page for selected package">
+              <p class="package-price" id="packagePrice">59 SAR</p>
+              <h1 class="fog-title" id="packageName">STANDARD PROFILE</h1>
+              <span class="package-recommended" id="packageRecommended">RECOMMENDED</span>
+            </div>
+
+            <button class="arrow" id="nextBtn" aria-label="Next package">›</button>
+          </div>
+
+          <div class="previews">
+            <div><img id="preview1" src="assets/previews/standard-1.png" alt="Standard Profile preview 1" /></div>
+            <div><img id="preview2" src="assets/previews/standard-2.png" alt="Standard Profile preview 2" /></div>
+          </div>
+
+          <article class="description" id="packageDesc">
+            For people who want more than just a basic profile. You get more space for your photos,
+            interests, colors, and details, with a design that feels more personal and alive.
+          </article>
+
+          <button class="package-rules-button" id="openPackageRules" type="button">
+            COMMON PACKAGE RULES
+          </button>
+          <div class="package-rules-separator" aria-hidden="true"></div>
+
+          <button class="order" id="openOrderForm" type="button">ORDER THIS PACKAGE</button>
+          <div class="order-separator" aria-hidden="true"></div>
+
+          <section class="package-video" aria-label="Package difference video">
+            <p class="package-video-label">WHAT'S THE DIFFERENCE BETWEEN PACKAGES?</p>
+            <div class="video-frame">
+              <video controls playsinline preload="metadata" poster="assets/videos/packages-poster.png">
+                <source src="assets/videos/packages-difference.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </section>
+        </section>
+      </section>
+    </section>
+
+    <!-- ORDER / PAYMENT PAGE INSIDE THE SAME SITE -->
+    <section class="order-page payment-page" id="orderPage" aria-label="ITTPR payment invoice">
+      <div class="order-shell">
+        <section class="payment-package-picker" aria-label="Choose payment package">
+          <button class="payment-package-choice" data-package="basic" type="button">
+            <b>Basic Profile</b>
+            <span>20 SAR</span>
+          </button>
+
+          <button class="payment-package-choice active" data-package="enhanced" type="button">
+            <b>Standard Profile</b>
+            <small class="payment-recommended">RECOMMENDED</small>
+            <span>59 SAR</span>
+          </button>
+
+          <button class="payment-package-choice" data-package="full" type="button">
+            <b>Full Vibe Profile</b>
+            <span>99 SAR</span>
+          </button>
+        </section>
+
+        <header class="order-head payment-head">
+          <p>ITTPR PAYMENT INVOICE</p>
+          <h2>PAY FIRST</h2>
+          <button class="form-back" id="formBack" type="button">BACK</button>
+          <span>
+            ITTPR orders are paid before submission. Choose your package,
+            transfer the exact amount, then fill the matching form and upload your payment receipt.
+          </span>
+        </header>
+
+        <section class="invoice-box">
+          <p class="invoice-label">Selected Package</p>
+          <h2 id="selectedPackageName">Standard Profile</h2>
+          <p class="invoice-price" id="selectedPackagePrice">59 SAR</p>
+        </section>
+
+        <section class="bank-details">
+          <h3>Payment Method</h3>
+          <p class="method">Bank Transfer Only</p>
+
+          <div class="merchant-iban-row">
+            <div class="merchant-iban-text">
+              <span>IBAN</span>
+              <strong id="merchantIban">SA00 0000 0000 0000 0000 0000</strong>
+            </div>
+
+            <button class="copy-iban-button" id="copyIbanButton" type="button">COPY IBAN</button>
+          </div>
+
+          <p class="copy-status" id="copyIbanStatus" aria-live="polite"></p>
+        </section>
+
+        <section class="important payment-important">
+          <h3>IMPORTANT PAYMENT INFORMATION</h3>
+
+          <p>Payment is accepted by bank transfer only.</p>
+
+          <p>
+            Enter your own IBAN in the order form. It will only be used to return your money
+            if the order is rejected or a payment problem requires a refund.
+          </p>
+
+          <p>
+            Write your username or order name in the transfer note.
+            Orders without a valid receipt will be ignored.
+          </p>
+
+          <p>
+            After the transfer and the form are submitted, your payment and details will be reviewed.
+            If your order is approved, you will receive an approval message by email.
+          </p>
+
+          <p>
+            You will then receive the first draft. Send all requested changes together
+            in one organized email reply.
+          </p>
+
+          <p>
+            After the final version is completed, the finished website will be delivered
+            to your email as a compressed ZIP file.
+          </p>
+        </section>
+
+        <section class="manual-form-zone" id="manualFormZone">
+          <header class="manual-form-head">
+            <p>ORDER DETAILS</p>
+            <h2 id="manualFormTitle">STANDARD PROFILE FORM</h2>
+            <span>This form changes automatically based on the package selected above.</span>
+          </header>
+
+          <form class="manual-form" id="basicForm" action="https://formsubmit.co/ittpr.sp@gmail.com" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="Order Package" value="Basic Profile" />
+            <input type="hidden" name="Package Price" value="20 SAR" />
+            <input type="hidden" name="Order Status" value="Pending Payment Verification" />
+            <input type="hidden" name="Website Language" class="submission-language" value="en" />
+            <input type="hidden" name="Submitted At" class="submission-time" value="" />
+            <input type="hidden" name="Order Reference" class="submission-reference" value="" />
+            <input type="hidden" name="Submitted Page" class="submission-page" value="" />
+
+            <input type="hidden" name="_subject" value="NEW ITTPR ORDER — BASIC PROFILE — 20 SAR" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_autoresponse" value="We received your ITTPR order. Your payment receipt and order details will be reviewed. If the order is approved, you will receive a confirmation email. Please keep all requested revisions together in one organized email reply." />
+            <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off" />
+
+            <label>
+              References / Inspiration links
+              <textarea name="References / Inspiration Links" rows="5" placeholder="Paste profiles, websites, image links, Pinterest boards, album covers, games, characters, or search results. Try keywords such as SpaceHey profile, old web profile, MySpace layout, webcore, profile CSS, grunge web, or horror website." required></textarea>
+              <small class="field-note">Required. Don’t skip this. Search with keywords such as SpaceHey profile, old web profile, MySpace layout, webcore, profile CSS, grunge web, or horror website.</small>
+            </label>
+
+            <label>
+              Upload reference images / sketches
+              <input type="file" name="Reference Images / Sketches" accept="image/*,.pdf" multiple required />
+              <small class="field-note">Required. Upload screenshots, drawings, sketches, mockups, website references, or any image you want us to take inspiration from.</small>
+            </label>
+
+            <label>
+              Email
+              <input type="email" name="email" required />
+              <small class="field-note">Important: this is where we will contact you and deliver your finished code.</small>
+            </label>
+
+            <label>
+              Username / Name
+              <input type="text" name="Username / Name" required />
+            </label>
+
+            <label>
+              Which package did you pay for?
+              <select name="Paid Package" required>
+                <option value="">Choose package</option>
+                <option value="Basic Profile">Basic Profile</option>
+                <option value="Standard Profile">Standard Profile</option>
+                <option value="Full Vibe Profile">Full Vibe Profile</option>
+              </select>
+            </label>
+
+            <label>
+              Payment sender name
+              <input type="text" name="Payment Sender Name" required />
+            </label>
+
+            <label>
+              Your IBAN — refunds only
+              <input type="text" name="Customer IBAN — Refunds Only" placeholder="SA00 0000 0000 0000 0000 0000" required />
+              <small class="field-note">Required. This IBAN is only used if we need to return your payment because of a rejection or payment issue.</small>
+            </label>
+
+            <label>
+              Receipt screenshot
+              <input type="file" name="Payment Receipt" accept="image/*,.pdf" required />
+            </label>
+
+            <label>
+              What vibe do you want?
+              <textarea name="Desired Vibe" rows="4" required></textarea>
+            </label>
+
+            <label>
+              Preferred colors
+              <input type="text" name="Preferred Colors" placeholder="black, white, red" required />
+            </label>
+            <label>
+              Do you want us to use your personal / avatar images?
+              <select name="Use Personal / Avatar Images" required>
+                <option value="">Choose one</option>
+                <option>Yes, I will upload them</option>
+                <option>No, use references only</option>
+              </select>
+            </label>
+
+            <label>
+              Upload personal / avatar / profile images
+              <input type="file" name="Personal / Avatar Images" accept="image/*" multiple />
+              <small class="field-note">Optional. Use this for your avatar, profile picture, character images, face claim, or any personal images you want inside the profile.</small>
+            </label>
+
+
+            <label>
+              About me text
+              <textarea name="About Me Text" rows="5"></textarea>
+            </label>
+
+            <label>
+              Social links
+              <textarea name="Social Links" rows="4"></textarea>
+            </label>
+
+            <label>
+              Anything you don’t want?
+              <textarea name="Anything You Don’t Want" rows="4" placeholder="no pink, no flashing effects, no bright colors"></textarea>
+            </label>
+
+            <label class="terms">
+              <input type="checkbox" name="Personal Use Terms Accepted" required />
+              <span>I understand that this order is for personal use only. I am not allowed to resell, redistribute, share, publish, or upload the delivered code as a free or paid template.</span>
+            </label>
+            <p class="form-delivery-note">The form sends the order details and uploaded files directly to ITTPR. Keep the total size of all uploaded files under 10 MB.</p>
+
+            <button class="submit-order" type="submit">SUBMIT BASIC ORDER</button>
+          </form>
+
+          <form class="manual-form active" id="enhancedForm" action="https://formsubmit.co/ittpr.sp@gmail.com" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="Order Package" value="Standard Profile" />
+            <input type="hidden" name="Package Price" value="59 SAR" />
+            <input type="hidden" name="Order Status" value="Pending Payment Verification" />
+            <input type="hidden" name="Website Language" class="submission-language" value="en" />
+            <input type="hidden" name="Submitted At" class="submission-time" value="" />
+            <input type="hidden" name="Order Reference" class="submission-reference" value="" />
+            <input type="hidden" name="Submitted Page" class="submission-page" value="" />
+
+            <input type="hidden" name="_subject" value="NEW ITTPR ORDER — STANDARD PROFILE — 59 SAR" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_autoresponse" value="We received your ITTPR order. Your payment receipt and order details will be reviewed. If the order is approved, you will receive a confirmation email. Please keep all requested revisions together in one organized email reply." />
+            <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off" />
+
+            <label>
+              References / Inspiration links
+              <textarea name="References / Inspiration Links" rows="5" placeholder="Paste profiles, websites, image links, Pinterest boards, album covers, games, characters, or search results. Try keywords such as SpaceHey profile, old web profile, MySpace layout, webcore, profile CSS, grunge web, or horror website." required></textarea>
+              <small class="field-note">Required. Don’t skip this. Search with keywords such as SpaceHey profile, old web profile, MySpace layout, webcore, profile CSS, grunge web, or horror website.</small>
+            </label>
+
+            <label>
+              Upload reference images / sketches
+              <input type="file" name="Reference Images / Sketches" accept="image/*,.pdf" multiple required />
+              <small class="field-note">Required. Upload screenshots, drawings, sketches, mockups, website references, or any image you want us to take inspiration from.</small>
+            </label>
+
+            <label>
+              Email
+              <input type="email" name="email" required />
+              <small class="field-note">Important: this is where we will contact you and deliver your finished code.</small>
+            </label>
+
+            <label>
+              Username / Name
+              <input type="text" name="Username / Name" required />
+            </label>
+
+            <label>
+              Which package did you pay for?
+              <select name="Paid Package" required>
+                <option value="">Choose package</option>
+                <option value="Basic Profile">Basic Profile</option>
+                <option value="Standard Profile">Standard Profile</option>
+                <option value="Full Vibe Profile">Full Vibe Profile</option>
+              </select>
+            </label>
+
+            <label>
+              Payment sender name
+              <input type="text" name="Payment Sender Name" required />
+            </label>
+
+            <label>
+              Your IBAN — refunds only
+              <input type="text" name="Customer IBAN — Refunds Only" placeholder="SA00 0000 0000 0000 0000 0000" required />
+              <small class="field-note">Required. This IBAN is only used if we need to return your payment because of a rejection or payment issue.</small>
+            </label>
+
+            <label>
+              Receipt screenshot
+              <input type="file" name="Payment Receipt" accept="image/*,.pdf" required />
+            </label>
+
+            <label>
+              What vibe do you want?
+              <textarea name="Desired Vibe" rows="4" required></textarea>
+            </label>
+
+            <label>
+              What should people feel when they enter your profile?
+              <textarea name="Visitor Feeling" rows="4" required></textarea>
+            </label>
+
+            <label>
+              Preferred colors
+              <input type="text" name="Preferred Colors" placeholder="black, white, red" required />
+            </label>
+            <label>
+              Do you want us to use your personal / avatar images?
+              <select name="Use Personal / Avatar Images" required>
+                <option value="">Choose one</option>
+                <option>Yes, I will upload them</option>
+                <option>No, use references only</option>
+              </select>
+            </label>
+
+            <label>
+              Upload personal / avatar / profile images
+              <input type="file" name="Personal / Avatar Images" accept="image/*" multiple />
+              <small class="field-note">Optional. Use this for your avatar, profile picture, character images, face claim, or any personal images you want inside the profile.</small>
+            </label>
+
+
+            <label>
+              About me text
+              <textarea name="About Me Text" rows="5"></textarea>
+            </label>
+
+            <label>
+              Social links
+              <textarea name="Social Links" rows="4"></textarea>
+            </label>
+
+            <fieldset>
+              <legend>Sections you want</legend>
+              <label><input type="checkbox" name="Sections Wanted" value="About Me" /> About Me</label>
+              <label><input type="checkbox" name="Sections Wanted" value="Music" /> Music</label>
+              <label><input type="checkbox" name="Sections Wanted" value="Games" /> Games</label>
+              <label><input type="checkbox" name="Sections Wanted" value="Movies" /> Movies</label>
+              <label><input type="checkbox" name="Sections Wanted" value="Favorites" /> Favorites</label>
+              <label><input type="checkbox" name="Sections Wanted" value="Social Links" /> Social Links</label>
+              <label><input type="checkbox" name="Sections Wanted" value="Mood" /> Mood</label>
+              <label><input type="checkbox" name="Sections Wanted" value="Custom section" /> Custom section</label>
+            </fieldset>
+
+            <label>
+              Anything you don’t want?
+              <textarea name="Anything You Don’t Want" rows="4" placeholder="no pink, no flashing effects, no scary images"></textarea>
+            </label>
+
+            <label class="terms">
+              <input type="checkbox" name="Personal Use Terms Accepted" required />
+              <span>I understand that this order is for personal use only. I am not allowed to resell, redistribute, share, publish, or upload the delivered code as a free or paid template.</span>
+            </label>
+            <p class="form-delivery-note">The form sends the order details and uploaded files directly to ITTPR. Keep the total size of all uploaded files under 10 MB.</p>
+
+            <button class="submit-order" type="submit">SUBMIT STANDARD ORDER</button>
+          </form>
+
+          <form class="manual-form" id="fullForm" action="https://formsubmit.co/ittpr.sp@gmail.com" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="Order Package" value="Full Vibe Profile" />
+            <input type="hidden" name="Package Price" value="99 SAR" />
+            <input type="hidden" name="Order Status" value="Pending Payment Verification" />
+            <input type="hidden" name="Website Language" class="submission-language" value="en" />
+            <input type="hidden" name="Submitted At" class="submission-time" value="" />
+            <input type="hidden" name="Order Reference" class="submission-reference" value="" />
+            <input type="hidden" name="Submitted Page" class="submission-page" value="" />
+
+            <input type="hidden" name="_subject" value="NEW ITTPR ORDER — FULL VIBE PROFILE — 99 SAR" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_autoresponse" value="We received your ITTPR order. Your payment receipt and order details will be reviewed. If the order is approved, you will receive a confirmation email. Please keep all requested revisions together in one organized email reply." />
+            <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off" />
+
+            <label>
+              References / Inspiration links
+              <textarea name="References / Inspiration Links" rows="5" placeholder="Paste profiles, websites, image links, Pinterest boards, album covers, games, characters, or search results. Try keywords such as SpaceHey profile, old web profile, MySpace layout, webcore, profile CSS, grunge web, or horror website." required></textarea>
+              <small class="field-note">Required. Don’t skip this. Search with keywords such as SpaceHey profile, old web profile, MySpace layout, webcore, profile CSS, grunge web, or horror website.</small>
+            </label>
+
+            <label>
+              Upload reference images / sketches
+              <input type="file" name="Reference Images / Sketches" accept="image/*,.pdf" multiple required />
+              <small class="field-note">Required. Upload screenshots, drawings, sketches, mockups, website references, or any image you want us to take inspiration from.</small>
+            </label>
+
+            <label>
+              Email
+              <input type="email" name="email" required />
+              <small class="field-note">Important: this is where we will contact you and deliver your finished code.</small>
+            </label>
+
+            <label>
+              Username / Name
+              <input type="text" name="Username / Name" required />
+            </label>
+
+            <label>
+              Which package did you pay for?
+              <select name="Paid Package" required>
+                <option value="">Choose package</option>
+                <option value="Basic Profile">Basic Profile</option>
+                <option value="Standard Profile">Standard Profile</option>
+                <option value="Full Vibe Profile">Full Vibe Profile</option>
+              </select>
+            </label>
+
+            <label>
+              Payment sender name
+              <input type="text" name="Payment Sender Name" required />
+            </label>
+
+            <label>
+              Your IBAN — refunds only
+              <input type="text" name="Customer IBAN — Refunds Only" placeholder="SA00 0000 0000 0000 0000 0000" required />
+              <small class="field-note">Required. This IBAN is only used if we need to return your payment because of a rejection or payment issue.</small>
+            </label>
+
+            <label>
+              Receipt screenshot
+              <input type="file" name="Payment Receipt" accept="image/*,.pdf" required />
+            </label>
+
+            <label>
+              Describe your full vibe
+              <textarea name="Full Vibe Description" rows="5" required></textarea>
+            </label>
+
+            <label>
+              What should people feel when they enter your profile?
+              <textarea name="Visitor Feeling" rows="4" required></textarea>
+            </label>
+
+            <label>
+              Preferred colors
+              <input type="text" name="Preferred Colors" placeholder="black, white, red" required />
+            </label>
+            <label>
+              Do you want us to use your personal / avatar images?
+              <select name="Use Personal / Avatar Images" required>
+                <option value="">Choose one</option>
+                <option>Yes, I will upload them</option>
+                <option>No, use references only</option>
+              </select>
+            </label>
+
+            <label>
+              Upload personal / avatar / profile images
+              <input type="file" name="Personal / Avatar Images" accept="image/*" multiple />
+              <small class="field-note">Optional. Use this for your avatar, profile picture, character images, face claim, or any personal images you want inside the profile.</small>
+            </label>
+
+
+            <label>
+              About me text
+              <textarea name="About Me Text" rows="5"></textarea>
+            </label>
+
+            <label>
+              Social links
+              <textarea name="Social Links" rows="4"></textarea>
+            </label>
+
+            <label>
+              Sections you want
+              <textarea name="Sections Wanted" rows="4" placeholder="About Me, Music, Games, Movies, Custom section..."></textarea>
+            </label>
+
+            <fieldset>
+              <legend>Layout style</legend>
+              <label><input type="checkbox" name="Layout Style" value="Old web" /> Old web</label>
+              <label><input type="checkbox" name="Layout Style" value="Dark" /> Dark</label>
+              <label><input type="checkbox" name="Layout Style" value="Cute" /> Cute</label>
+              <label><input type="checkbox" name="Layout Style" value="Horror" /> Horror</label>
+              <label><input type="checkbox" name="Layout Style" value="Glitch" /> Glitch</label>
+              <label><input type="checkbox" name="Layout Style" value="Clean" /> Clean</label>
+              <label><input type="checkbox" name="Layout Style" value="Grunge" /> Grunge</label>
+              <label><input type="checkbox" name="Layout Style" value="Weird" /> Weird</label>
+              <label><input type="checkbox" name="Layout Style" value="Other" /> Other</label>
+            </fieldset>
+
+            <label>
+              Things you absolutely don’t want
+              <textarea name="Anything You Don’t Want" rows="4" placeholder="no pink, no flashing effects, no scary images"></textarea>
+            </label>
+
+            <label>
+              Any special text or quotes?
+              <textarea name="Special Text / Quotes" rows="4"></textarea>
+            </label>
+
+            <label class="terms">
+              <input type="checkbox" name="Personal Use Terms Accepted" required />
+              <span>I understand that this order is for personal use only. I am not allowed to resell, redistribute, share, publish, or upload the delivered code as a free or paid template.</span>
+            </label>
+            <p class="form-delivery-note">The form sends the order details and uploaded files directly to ITTPR. Keep the total size of all uploaded files under 10 MB.</p>
+
+            <button class="submit-order" type="submit">SUBMIT FULL VIBE ORDER</button>
+          </form>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <section class="works-page" id="worksPage" aria-label="ITTPR works gallery">
+    <div class="works-inner">
+      <header class="works-head">
+        <p>ITTPR ARCHIVE</p>
+        <h2>WORKS</h2>
+        <a class="back-button" id="backButton" href="#shop">BACK</a>
+        <span>profiles made for real orders / previews / client vibes</span>
+      </header>
+
+      <div class="works-list">
+        <figure class="work-card">
+          <img src="assets/works/work-1.png" alt="ITTPR work 1" />
+          <figcaption>WORK 01</figcaption>
+        </figure>
+
+        <figure class="work-card">
+          <img src="assets/works/work-2.png" alt="ITTPR work 2" />
+          <figcaption>WORK 02</figcaption>
+        </figure>
+
+        <figure class="work-card">
+          <img src="assets/works/work-3.png" alt="ITTPR work 3" />
+          <figcaption>WORK 03</figcaption>
+        </figure>
+
+        <figure class="work-card">
+          <img src="assets/works/work-4.png" alt="ITTPR work 4" />
+          <figcaption>WORK 04</figcaption>
+        </figure>
+
+        <figure class="work-card">
+          <img src="assets/works/work-5.png" alt="ITTPR work 5" />
+          <figcaption>WORK 05</figcaption>
+        </figure>
+
+        <figure class="work-card">
+          <img src="assets/works/work-6.png" alt="ITTPR work 6" />
+          <figcaption>WORK 06</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="rules-page" id="rulesPage" aria-label="Common package rules">
+    <div class="rules-inner">
+      <header class="rules-head">
+        <p>ITTPR TERMS</p>
+        <h2>COMMON PACKAGE RULES</h2>
+        <button class="rules-back" id="rulesBackButton" type="button">BACK</button>
+        <span>These rules apply to Basic, Standard, and Full Vibe.</span>
+      </header>
+
+      <section class="rules-section">
+        <h3>EVERY PACKAGE INCLUDES</h3>
+
+        <ul>
+          <li>Design for one profile only.</li>
+          <li>Personal use for the client.</li>
+          <li>Adding and arranging the client’s social links.</li>
+          <li>Making the design work on desktop and mobile as well as reasonably possible.</li>
+          <li>The client must provide all images, text, and links ready to use.</li>
+          <li>Final delivery as complete code with short installation instructions.</li>
+        </ul>
+      </section>
+
+      <section class="rules-section rules-not-included">
+        <h3>NO PACKAGE INCLUDES</h3>
+
+        <ul>
+          <li>Designing a logo for the client.</li>
+          <li>Creating, illustrating, or drawing images from scratch.</li>
+          <li>Writing long-form content instead of the client.</li>
+          <li>Building a complete multi-page website.</li>
+          <li>Building an online store, login system, or database.</li>
+          <li>Completely changing the design concept after work has started.</li>
+          <li>Reselling, redistributing, sharing, or publishing the delivered code as a template.</li>
+        </ul>
+      </section>
+    </div>
+  </section>
+
+  <section class="image-lightbox" id="imageLightbox" aria-label="Expanded package preview" aria-hidden="true">
+    <button class="lightbox-back" id="lightboxBack" type="button">BACK</button>
+    <div class="lightbox-frame">
+      <img id="lightboxImage" src="" alt="Full package preview" />
+    </div>
+  </section>
+
+  <script>
+
+    const translations = {"ar":{"ITTPR — Profile Vibe Store":"ITTPR — متجر البروفايلات","SHOP":"المتجر","PACKAGES":"الباقات","CONTACT":"التواصل","ITTPR is for people who are tired of paying every month for the same boring link page.":"ITTPR مخصص للأشخاص الذين سئموا من الدفع كل شهر مقابل صفحة روابط مملة ومكررة.","Instead of renting a plain profile with a few buttons, you get a page that actually feels like you. Inspired by old-school internet profiles, personal homepages, MySpace-era layouts, and the weird charm of the early web.":"بدلًا من استئجار بروفايل عادي فيه بضعة أزرار، تحصل على صفحة تشبهك فعلًا. مستوحاة من بروفايلات الإنترنت القديمة، والصفحات الشخصية، وتصاميم عصر MySpace، وسحر الويب القديم الغريب.","No monthly subscription. No generic template that looks like everyone else’s. Just one custom profile built around your links, photos, interests, colors, and overall vibe.":"لا اشتراك شهري. لا قالب عام يشبه صفحات الجميع. فقط بروفايل مخصص مبني حول روابطك وصورك واهتماماتك وألوانك والفايب الخاص بك.","We don’t make another account page.":"نحن لا نصنع مجرد صفحة حساب أخرى.","We build the version people remember.":"نحن نبني النسخة التي يتذكرها الناس.","Email":"البريد الإلكتروني","WORKS":"الأعمال","CLIENT ARCHIVE":"أرشيف العملاء","BASIC PROFILE":"البروفايل الأساسي","STANDARD PROFILE":"البروفايل القياسي","FULL VIBE PROFILE":"بروفايل الفايب الكامل","RECOMMENDED":"مستحسن","A simple profile that gives your page a cleaner look and a bit more personality. Perfect if you just want your photos, links, and basic info to feel more like you.":"بروفايل بسيط يعطي صفحتك مظهرًا أنظف وشخصية أوضح. مناسب إذا كنت تريد أن تبدو صورك وروابطك ومعلوماتك الأساسية أقرب إلى أسلوبك.","For people who want more than just a basic profile. You get more space for your photos, interests, colors, and details, with a design that feels more personal and alive.":"للأشخاص الذين يريدون أكثر من بروفايل أساسي. تحصل على مساحة أكبر لصورك واهتماماتك وألوانك وتفاصيلك، مع تصميم يبدو أكثر شخصية وحيوية.","This is where we go all in. We build the whole profile around your style, your mood, and the way you want people to feel when they visit it.":"هنا نذهب إلى أقصى حد. نبني البروفايل كاملًا حول أسلوبك ومزاجك والإحساس الذي تريد أن يشعر به الناس عند زيارته.","COMMON PACKAGE RULES":"القواعد المشتركة للباقات","ORDER THIS PACKAGE":"اطلب هذه الباقة","WHAT'S THE DIFFERENCE BETWEEN PACKAGES?":"ما الفرق بين الباقات؟","Your browser does not support the video tag.":"متصفحك لا يدعم تشغيل الفيديو.","Basic Profile":"البروفايل الأساسي","Standard Profile":"البروفايل القياسي","Full Vibe Profile":"بروفايل الفايب الكامل","ITTPR PAYMENT INVOICE":"فاتورة دفع ITTPR","PAY FIRST":"ادفع أولًا","BACK":"رجوع","ITTPR orders are paid before submission. Choose your package, transfer the exact amount, then fill the matching form and upload your payment receipt.":"طلبات ITTPR تُدفع قبل إرسالها. اختر باقتك، وحوّل المبلغ الصحيح، ثم عبّئ الفورم المطابق وارفع إيصال الدفع.","Selected Package":"الباقة المحددة","Payment Method":"طريقة الدفع","Bank Transfer Only":"تحويل بنكي فقط","IBAN":"الآيبان","COPY IBAN":"نسخ الآيبان","IMPORTANT PAYMENT INFORMATION":"معلومات دفع مهمة","Payment is accepted by bank transfer only.":"الدفع متاح عن طريق التحويل البنكي فقط.","Enter your own IBAN in the order form. It will only be used to return your money if the order is rejected or a payment problem requires a refund.":"اكتب الآيبان الخاص بك داخل فورم الطلب. لن يُستخدم إلا لإرجاع المبلغ إذا تم رفض الطلب أو حدثت مشكلة تتطلب استرداد المال.","Write your username or order name in the transfer note. Orders without a valid receipt will be ignored.":"اكتب اسم المستخدم أو اسم الطلب في ملاحظة التحويل. الطلبات التي لا تحتوي على إيصال صالح سيتم تجاهلها.","After the transfer and the form are submitted, your payment and details will be reviewed. If your order is approved, you will receive an approval message by email.":"بعد التحويل وإرسال الفورم، سيتم التحقق من الدفع والتفاصيل. إذا تمت الموافقة على طلبك فسيصلك إشعار بالموافقة عبر البريد الإلكتروني.","You will then receive the first draft. Send all requested changes together in one organized email reply.":"بعدها سيصلك النموذج الأولي. أرسل جميع التعديلات المطلوبة معًا في رد واحد منظم على البريد الإلكتروني.","After the final version is completed, the finished website will be delivered to your email as a compressed ZIP file.":"بعد إكمال النسخة النهائية، سيتم إرسال الموقع إلى بريدك الإلكتروني داخل ملف ZIP مضغوط.","ORDER DETAILS":"تفاصيل الطلب","BASIC PROFILE FORM":"فورم البروفايل الأساسي","STANDARD PROFILE FORM":"فورم البروفايل القياسي","FULL VIBE PROFILE FORM":"فورم الفايب الكامل","This form changes automatically based on the package selected above.":"يتغير هذا الفورم تلقائيًا حسب الباقة التي تختارها في الأعلى.","References / Inspiration links":"روابط المراجع والإلهام","Required. Don’t skip this. Search with keywords such as SpaceHey profile, old web profile, MySpace layout, webcore, profile CSS, grunge web, or horror website.":"إجباري، لا تتجاوزه. ابحث بكلمات مثل SpaceHey profile أو old web profile أو MySpace layout أو webcore أو profile CSS أو grunge web أو horror website.","Upload reference images / sketches":"ارفع صور المراجع أو الرسومات","Required. Upload screenshots, drawings, sketches, mockups, website references, or any image you want us to take inspiration from.":"إجباري. ارفع لقطات شاشة أو رسومات أو سكتشات أو نماذج أو مراجع مواقع أو أي صور تريد أن نستلهم منها.","Important: this is where we will contact you and deliver your finished code.":"مهم: هذا هو البريد الذي سنتواصل معك من خلاله ونسلّمك عليه الكود النهائي.","Username / Name":"اسم المستخدم / الاسم","Which package did you pay for?":"أي باقة دفعت لها؟","Choose package":"اختر الباقة","Payment sender name":"اسم صاحب التحويل","Your IBAN — refunds only":"الآيبان الخاص بك — للاسترجاع فقط","Required. This IBAN is only used if we need to return your payment because of a rejection or payment issue.":"إجباري. سيُستخدم هذا الآيبان فقط إذا احتجنا إلى إعادة المبلغ بسبب رفض الطلب أو مشكلة في الدفع.","Receipt screenshot":"صورة إيصال التحويل","What vibe do you want?":"ما الفايب الذي تريده؟","Preferred colors":"الألوان المفضلة","Do you want us to use your personal / avatar images?":"هل تريد استخدام صورك الشخصية أو الأفتار؟","Choose one":"اختر خيارًا","Yes, I will upload them":"نعم، سأرفعها","No, use references only":"لا، استخدم المراجع فقط","Upload personal / avatar / profile images":"ارفع الصور الشخصية أو الأفتار أو صور البروفايل","Optional. Use this for your avatar, profile picture, character images, face claim, or any personal images you want inside the profile.":"اختياري. استخدم هذه الخانة للأفتار أو صورة البروفايل أو صور الشخصيات أو أي صور شخصية تريدها داخل البروفايل.","About me text":"نص النبذة عني","Social links":"روابط الحسابات","Anything you don’t want?":"هل يوجد شيء لا تريده؟","I understand that this order is for personal use only. I am not allowed to resell, redistribute, share, publish, or upload the delivered code as a free or paid template.":"أفهم أن هذا الطلب للاستخدام الشخصي فقط، ولا يحق لي إعادة بيع الكود أو توزيعه أو مشاركته أو نشره أو رفعه كقالب مجاني أو مدفوع.","SUBMIT BASIC ORDER":"إرسال طلب الباقة الأساسية","What should people feel when they enter your profile?":"ماذا تريد أن يشعر به الناس عند دخول بروفايلك؟","Sections you want":"الأقسام التي تريدها","About Me":"نبذة عني","Music":"الموسيقى","Games":"الألعاب","Movies":"الأفلام","Favorites":"المفضلة","Social Links":"روابط الحسابات","Mood":"المزاج","Custom section":"قسم مخصص","SUBMIT STANDARD ORDER":"إرسال طلب الباقة القياسية","Describe your full vibe":"صف الفايب الكامل","Layout style":"أسلوب التصميم","Old web":"ويب قديم","Dark":"مظلم","Cute":"لطيف","Horror":"رعب","Glitch":"قلتش","Clean":"نظيف","Grunge":"جرنج","Weird":"غريب","Other":"غير ذلك","Things you absolutely don’t want":"أشياء لا تريدها إطلاقًا","Any special text or quotes?":"هل لديك نصوص أو اقتباسات خاصة؟","SUBMIT FULL VIBE ORDER":"إرسال طلب الفايب الكامل","ITTPR ARCHIVE":"أرشيف ITTPR","profiles made for real orders / previews / client vibes":"بروفايلات لطلبات حقيقية / معاينات / فايبات العملاء","WORK 01":"عمل 01","WORK 02":"عمل 02","WORK 03":"عمل 03","WORK 04":"عمل 04","WORK 05":"عمل 05","WORK 06":"عمل 06","ITTPR TERMS":"شروط ITTPR","These rules apply to Basic, Standard, and Full Vibe.":"تنطبق هذه القواعد على الباقات الأساسية والقياسية والفايب الكامل.","EVERY PACKAGE INCLUDES":"تشمل جميع الباقات","Design for one profile only.":"تصميم بروفايل واحد فقط.","Personal use for the client.":"استخدام شخصي للعميل.","Adding and arranging the client’s social links.":"إضافة وترتيب روابط حسابات العميل.","Making the design work on desktop and mobile as well as reasonably possible.":"تنسيق التصميم على الكمبيوتر والجوال قدر الإمكان.","The client must provide all images, text, and links ready to use.":"يجب على العميل إرسال الصور والنصوص والروابط جاهزة للاستخدام.","Final delivery as complete code with short installation instructions.":"التسليم يكون كودًا نهائيًا مع تعليمات تركيب مختصرة.","NO PACKAGE INCLUDES":"لا تشمل أي باقة","Designing a logo for the client.":"تصميم شعار للعميل.","Creating, illustrating, or drawing images from scratch.":"صناعة أو رسم الصور من الصفر.","Writing long-form content instead of the client.":"كتابة محتوى طويل بدلًا من العميل.","Building a complete multi-page website.":"إنشاء موقع كامل بصفحات متعددة.","Building an online store, login system, or database.":"إنشاء متجر إلكتروني أو تسجيل دخول أو قاعدة بيانات.","Completely changing the design concept after work has started.":"تغيير فكرة التصميم بالكامل بعد بدء التنفيذ.","Reselling, redistributing, sharing, or publishing the delivered code as a template.":"إعادة بيع الكود أو توزيعه أو مشاركته أو نشره كقالب.","Paste profiles, websites, image links, Pinterest boards, album covers, games, characters, or search results. Try keywords such as SpaceHey profile, old web profile, MySpace layout, webcore, profile CSS, grunge web, or horror website.":"ضع روابط بروفايلات أو مواقع أو صور أو لوحات Pinterest أو أغلفة ألبومات أو ألعاب أو شخصيات أو نتائج بحث. جرّب كلمات مثل SpaceHey profile أو old web profile أو MySpace layout أو webcore أو profile CSS أو grunge web أو horror website.","black, white, red":"أسود، أبيض، أحمر","no pink, no flashing effects, no bright colors":"بدون وردي، بدون وميض، بدون ألوان ساطعة","no pink, no flashing effects, no scary images":"بدون وردي، بدون وميض، بدون صور مخيفة","About Me, Music, Games, Movies, Custom section...":"نبذة عني، موسيقى، ألعاب، أفلام، قسم مخصص...","Language selector":"اختيار اللغة","Menu notes":"قائمة الموقع","Works page":"صفحة الأعمال","Previous package":"الباقة السابقة","Open order page for selected package":"افتح صفحة طلب الباقة المحددة","Next package":"الباقة التالية","Package difference video":"فيديو الفرق بين الباقات","ITTPR payment invoice":"فاتورة دفع ITTPR","Choose payment package":"اختر باقة الدفع","ITTPR works gallery":"معرض أعمال ITTPR","Common package rules":"القواعد المشتركة للباقات","Expanded package preview":"معاينة مكبرة للباقة","IBAN COPIED":"تم نسخ الآيبان","Form design is ready. Connect this form to Tally, Formspree, Netlify Forms, or your backend before launch.":"تصميم الفورم جاهز. اربطه بـ Tally أو Formspree أو Netlify Forms أو نظامك الخلفي قبل الإطلاق.","ACCOUNTS":"الحسابات","ABOUT":"النبذة"},"ru":{"ITTPR — Profile Vibe Store":"ITTPR — Магазин профилей","SHOP":"МАГАЗИН","PACKAGES":"ПАКЕТЫ","CONTACT":"КОНТАКТ","ITTPR is for people who are tired of paying every month for the same boring link page.":"ITTPR создан для тех, кому надоело каждый месяц платить за одну и ту же скучную страницу со ссылками.","Instead of renting a plain profile with a few buttons, you get a page that actually feels like you. Inspired by old-school internet profiles, personal homepages, MySpace-era layouts, and the weird charm of the early web.":"Вместо аренды обычного профиля с несколькими кнопками вы получаете страницу, которая действительно похожа на вас. Вдохновение — старые интернет-профили, личные страницы, эпоха MySpace и странное очарование раннего веба.","No monthly subscription. No generic template that looks like everyone else’s. Just one custom profile built around your links, photos, interests, colors, and overall vibe.":"Без ежемесячной подписки. Без шаблона, который выглядит как у всех. Только один индивидуальный профиль, построенный вокруг ваших ссылок, фотографий, интересов, цветов и общего вайба.","We don’t make another account page.":"Мы не делаем очередную страницу аккаунта.","We build the version people remember.":"Мы создаём версию, которую запомнят.","Email":"Почта","WORKS":"РАБОТЫ","CLIENT ARCHIVE":"АРХИВ КЛИЕНТОВ","BASIC PROFILE":"БАЗОВЫЙ ПРОФИЛЬ","STANDARD PROFILE":"СТАНДАРТНЫЙ ПРОФИЛЬ","FULL VIBE PROFILE":"ПРОФИЛЬ FULL VIBE","RECOMMENDED":"РЕКОМЕНДУЕМ","A simple profile that gives your page a cleaner look and a bit more personality. Perfect if you just want your photos, links, and basic info to feel more like you.":"Простой профиль, который делает страницу аккуратнее и добавляет ей характера. Подойдёт, если вы хотите, чтобы фотографии, ссылки и основная информация лучше отражали вас.","For people who want more than just a basic profile. You get more space for your photos, interests, colors, and details, with a design that feels more personal and alive.":"Для тех, кому мало базового профиля. Больше места для фотографий, интересов, цветов и деталей, а дизайн выглядит более личным и живым.","This is where we go all in. We build the whole profile around your style, your mood, and the way you want people to feel when they visit it.":"Здесь мы идём до конца. Весь профиль строится вокруг вашего стиля, настроения и впечатления, которое должны получить посетители.","COMMON PACKAGE RULES":"ОБЩИЕ ПРАВИЛА ПАКЕТОВ","ORDER THIS PACKAGE":"ЗАКАЗАТЬ ЭТОТ ПАКЕТ","WHAT'S THE DIFFERENCE BETWEEN PACKAGES?":"ЧЕМ ОТЛИЧАЮТСЯ ПАКЕТЫ?","Your browser does not support the video tag.":"Ваш браузер не поддерживает видео.","Basic Profile":"Базовый профиль","Standard Profile":"Стандартный профиль","Full Vibe Profile":"Профиль Full Vibe","ITTPR PAYMENT INVOICE":"СЧЁТ ITTPR","PAY FIRST":"СНАЧАЛА ОПЛАТА","BACK":"НАЗАД","ITTPR orders are paid before submission. Choose your package, transfer the exact amount, then fill the matching form and upload your payment receipt.":"Заказы ITTPR оплачиваются до отправки. Выберите пакет, переведите точную сумму, затем заполните соответствующую форму и загрузите чек.","Selected Package":"Выбранный пакет","Payment Method":"Способ оплаты","Bank Transfer Only":"Только банковский перевод","IBAN":"IBAN","COPY IBAN":"КОПИРОВАТЬ IBAN","IMPORTANT PAYMENT INFORMATION":"ВАЖНАЯ ИНФОРМАЦИЯ ОБ ОПЛАТЕ","Payment is accepted by bank transfer only.":"Оплата принимается только банковским переводом.","Enter your own IBAN in the order form. It will only be used to return your money if the order is rejected or a payment problem requires a refund.":"Укажите свой IBAN в форме заказа. Он будет использован только для возврата средств, если заказ отклонён или возникла проблема с оплатой.","Write your username or order name in the transfer note. Orders without a valid receipt will be ignored.":"Укажите имя пользователя или название заказа в назначении перевода. Заказы без действительного чека будут проигнорированы.","After the transfer and the form are submitted, your payment and details will be reviewed. If your order is approved, you will receive an approval message by email.":"После перевода и отправки формы мы проверим оплату и данные. При одобрении заказа вы получите письмо.","You will then receive the first draft. Send all requested changes together in one organized email reply.":"Затем вы получите первый вариант. Отправьте все правки вместе в одном организованном ответе на письмо.","After the final version is completed, the finished website will be delivered to your email as a compressed ZIP file.":"После завершения финальной версии готовый сайт будет отправлен на вашу почту в ZIP-архиве.","ORDER DETAILS":"ДЕТАЛИ ЗАКАЗА","BASIC PROFILE FORM":"ФОРМА БАЗОВОГО ПРОФИЛЯ","STANDARD PROFILE FORM":"ФОРМА СТАНДАРТНОГО ПРОФИЛЯ","FULL VIBE PROFILE FORM":"ФОРМА FULL VIBE","This form changes automatically based on the package selected above.":"Форма автоматически меняется в зависимости от выбранного выше пакета.","References / Inspiration links":"Ссылки на референсы и вдохновение","Required. Don’t skip this. Search with keywords such as SpaceHey profile, old web profile, MySpace layout, webcore, profile CSS, grunge web, or horror website.":"Обязательно. Не пропускайте. Ищите по словам SpaceHey profile, old web profile, MySpace layout, webcore, profile CSS, grunge web или horror website.","Upload reference images / sketches":"Загрузите референсы или эскизы","Required. Upload screenshots, drawings, sketches, mockups, website references, or any image you want us to take inspiration from.":"Обязательно. Загрузите скриншоты, рисунки, эскизы, макеты, примеры сайтов или любые изображения для вдохновения.","Important: this is where we will contact you and deliver your finished code.":"Важно: через эту почту мы свяжемся с вами и отправим готовый код.","Username / Name":"Имя пользователя / имя","Which package did you pay for?":"Какой пакет вы оплатили?","Choose package":"Выберите пакет","Payment sender name":"Имя отправителя перевода","Your IBAN — refunds only":"Ваш IBAN — только для возврата","Required. This IBAN is only used if we need to return your payment because of a rejection or payment issue.":"Обязательно. Этот IBAN используется только для возврата средств при отклонении заказа или проблеме с оплатой.","Receipt screenshot":"Скриншот чека","What vibe do you want?":"Какой вайб вы хотите?","Preferred colors":"Предпочитаемые цвета","Do you want us to use your personal / avatar images?":"Использовать ваши личные изображения или аватар?","Choose one":"Выберите вариант","Yes, I will upload them":"Да, я загружу их","No, use references only":"Нет, используйте только референсы","Upload personal / avatar / profile images":"Загрузите личные изображения, аватар или фото профиля","Optional. Use this for your avatar, profile picture, character images, face claim, or any personal images you want inside the profile.":"Необязательно. Здесь можно загрузить аватар, фото профиля, изображения персонажей или любые личные изображения для профиля.","About me text":"Текст «Обо мне»","Social links":"Ссылки на соцсети","Anything you don’t want?":"Что вы точно не хотите?","I understand that this order is for personal use only. I am not allowed to resell, redistribute, share, publish, or upload the delivered code as a free or paid template.":"Я понимаю, что заказ предназначен только для личного использования. Мне запрещено перепродавать, распространять, публиковать или загружать полученный код как бесплатный или платный шаблон.","SUBMIT BASIC ORDER":"ОТПРАВИТЬ БАЗОВЫЙ ЗАКАЗ","What should people feel when they enter your profile?":"Что должны почувствовать люди, заходя в ваш профиль?","Sections you want":"Нужные разделы","About Me":"Обо мне","Music":"Музыка","Games":"Игры","Movies":"Фильмы","Favorites":"Избранное","Social Links":"Социальные ссылки","Mood":"Настроение","Custom section":"Свой раздел","SUBMIT STANDARD ORDER":"ОТПРАВИТЬ СТАНДАРТНЫЙ ЗАКАЗ","Describe your full vibe":"Опишите полный вайб","Layout style":"Стиль макета","Old web":"Старый веб","Dark":"Тёмный","Cute":"Милый","Horror":"Хоррор","Glitch":"Глитч","Clean":"Чистый","Grunge":"Гранж","Weird":"Странный","Other":"Другое","Things you absolutely don’t want":"Чего вы категорически не хотите","Any special text or quotes?":"Есть особый текст или цитаты?","SUBMIT FULL VIBE ORDER":"ОТПРАВИТЬ ЗАКАЗ FULL VIBE","ITTPR ARCHIVE":"АРХИВ ITTPR","profiles made for real orders / previews / client vibes":"профили реальных заказов / превью / вайбы клиентов","WORK 01":"РАБОТА 01","WORK 02":"РАБОТА 02","WORK 03":"РАБОТА 03","WORK 04":"РАБОТА 04","WORK 05":"РАБОТА 05","WORK 06":"РАБОТА 06","ITTPR TERMS":"УСЛОВИЯ ITTPR","These rules apply to Basic, Standard, and Full Vibe.":"Эти правила действуют для пакетов Basic, Standard и Full Vibe.","EVERY PACKAGE INCLUDES":"КАЖДЫЙ ПАКЕТ ВКЛЮЧАЕТ","Design for one profile only.":"Дизайн только одного профиля.","Personal use for the client.":"Только личное использование клиентом.","Adding and arranging the client’s social links.":"Добавление и оформление ссылок клиента.","Making the design work on desktop and mobile as well as reasonably possible.":"Адаптация дизайна для компьютера и телефона в разумных пределах.","The client must provide all images, text, and links ready to use.":"Клиент предоставляет готовые изображения, текст и ссылки.","Final delivery as complete code with short installation instructions.":"Финальная доставка: полный код и краткая инструкция по установке.","NO PACKAGE INCLUDES":"НИ ОДИН ПАКЕТ НЕ ВКЛЮЧАЕТ","Designing a logo for the client.":"Разработку логотипа для клиента.","Creating, illustrating, or drawing images from scratch.":"Создание или рисование изображений с нуля.","Writing long-form content instead of the client.":"Написание длинных текстов вместо клиента.","Building a complete multi-page website.":"Создание полноценного многостраничного сайта.","Building an online store, login system, or database.":"Создание интернет-магазина, системы входа или базы данных.","Completely changing the design concept after work has started.":"Полную смену концепции после начала работы.","Reselling, redistributing, sharing, or publishing the delivered code as a template.":"Перепродажу, распространение или публикацию кода как шаблона.","Paste profiles, websites, image links, Pinterest boards, album covers, games, characters, or search results. Try keywords such as SpaceHey profile, old web profile, MySpace layout, webcore, profile CSS, grunge web, or horror website.":"Вставьте ссылки на профили, сайты, изображения, доски Pinterest, обложки, игры, персонажей или результаты поиска. Используйте запросы SpaceHey profile, old web profile, MySpace layout, webcore, profile CSS, grunge web или horror website.","black, white, red":"чёрный, белый, красный","no pink, no flashing effects, no bright colors":"без розового, мигания и ярких цветов","no pink, no flashing effects, no scary images":"без розового, мигания и страшных изображений","About Me, Music, Games, Movies, Custom section...":"Обо мне, Музыка, Игры, Фильмы, Свой раздел...","Language selector":"Выбор языка","Menu notes":"Меню сайта","Works page":"Страница работ","Previous package":"Предыдущий пакет","Open order page for selected package":"Открыть заказ выбранного пакета","Next package":"Следующий пакет","Package difference video":"Видео о различиях пакетов","ITTPR payment invoice":"Счёт ITTPR","Choose payment package":"Выберите пакет оплаты","ITTPR works gallery":"Галерея работ ITTPR","Common package rules":"Общие правила пакетов","Expanded package preview":"Увеличенное превью пакета","IBAN COPIED":"IBAN СКОПИРОВАН","Form design is ready. Connect this form to Tally, Formspree, Netlify Forms, or your backend before launch.":"Дизайн формы готов. Перед запуском подключите её к Tally, Formspree, Netlify Forms или своему серверу.","ACCOUNTS":"АККАУНТЫ","ABOUT":"О НАС"},"ja":{"ITTPR — Profile Vibe Store":"ITTPR — プロフィールストア","SHOP":"ショップ","PACKAGES":"パッケージ","CONTACT":"お問い合わせ","ITTPR is for people who are tired of paying every month for the same boring link page.":"ITTPRは、同じような退屈なリンクページに毎月お金を払うことに疲れた人のためのサービスです。","Instead of renting a plain profile with a few buttons, you get a page that actually feels like you. Inspired by old-school internet profiles, personal homepages, MySpace-era layouts, and the weird charm of the early web.":"いくつかのボタンだけが並ぶ普通のプロフィールを借りる代わりに、あなたらしさを感じられるページを作ります。昔のネットプロフィール、個人ホームページ、MySpace時代のレイアウト、初期ウェブの奇妙な魅力から着想を得ています。","No monthly subscription. No generic template that looks like everyone else’s. Just one custom profile built around your links, photos, interests, colors, and overall vibe.":"月額料金はありません。誰とでも同じに見える汎用テンプレートもありません。リンク、写真、趣味、色、全体の雰囲気に合わせた一つだけのカスタムプロフィールです。","We don’t make another account page.":"ただのアカウントページは作りません。","We build the version people remember.":"人の記憶に残るページを作ります。","Email":"メール","WORKS":"制作実績","CLIENT ARCHIVE":"クライアントアーカイブ","BASIC PROFILE":"ベーシックプロフィール","STANDARD PROFILE":"スタンダードプロフィール","FULL VIBE PROFILE":"フルバイブプロフィール","RECOMMENDED":"おすすめ","A simple profile that gives your page a cleaner look and a bit more personality. Perfect if you just want your photos, links, and basic info to feel more like you.":"ページをすっきり見せながら、少し個性を加えるシンプルなプロフィールです。写真、リンク、基本情報を自分らしく見せたい人に向いています。","For people who want more than just a basic profile. You get more space for your photos, interests, colors, and details, with a design that feels more personal and alive.":"基本プロフィール以上を求める人向けです。写真、趣味、色、細かな情報をより多く載せられ、個人的で生きた印象のデザインになります。","This is where we go all in. We build the whole profile around your style, your mood, and the way you want people to feel when they visit it.":"ここでは全力で作り込みます。あなたのスタイル、気分、訪問者に感じてほしい印象を中心にプロフィール全体を構築します。","COMMON PACKAGE RULES":"全パッケージ共通ルール","ORDER THIS PACKAGE":"このパッケージを注文","WHAT'S THE DIFFERENCE BETWEEN PACKAGES?":"パッケージの違いは？","Your browser does not support the video tag.":"お使いのブラウザは動画に対応していません。","Basic Profile":"ベーシックプロフィール","Standard Profile":"スタンダードプロフィール","Full Vibe Profile":"フルバイブプロフィール","ITTPR PAYMENT INVOICE":"ITTPR 支払い請求","PAY FIRST":"先にお支払い","BACK":"戻る","ITTPR orders are paid before submission. Choose your package, transfer the exact amount, then fill the matching form and upload your payment receipt.":"ITTPRの注文は先払いです。パッケージを選び、正確な金額を振り込み、対応するフォームに入力して支払い明細をアップロードしてください。","Selected Package":"選択中のパッケージ","Payment Method":"支払い方法","Bank Transfer Only":"銀行振込のみ","IBAN":"IBAN","COPY IBAN":"IBANをコピー","IMPORTANT PAYMENT INFORMATION":"重要な支払い情報","Payment is accepted by bank transfer only.":"支払いは銀行振込のみ受け付けています。","Enter your own IBAN in the order form. It will only be used to return your money if the order is rejected or a payment problem requires a refund.":"注文フォームにご自身のIBANを入力してください。注文が拒否された場合や返金が必要な支払い問題が起きた場合にのみ使用します。","Write your username or order name in the transfer note. Orders without a valid receipt will be ignored.":"振込メモにユーザー名または注文名を記載してください。有効な明細がない注文は無視されます。","After the transfer and the form are submitted, your payment and details will be reviewed. If your order is approved, you will receive an approval message by email.":"振込とフォーム送信後、支払いと内容を確認します。承認された場合はメールで通知します。","You will then receive the first draft. Send all requested changes together in one organized email reply.":"その後、初稿をお送りします。修正希望は一つの整理されたメール返信にまとめてください。","After the final version is completed, the finished website will be delivered to your email as a compressed ZIP file.":"最終版の完成後、完成したウェブサイトをZIPファイルでメールに送付します。","ORDER DETAILS":"注文内容","BASIC PROFILE FORM":"ベーシックプロフィールフォーム","STANDARD PROFILE FORM":"スタンダードプロフィールフォーム","FULL VIBE PROFILE FORM":"フルバイブプロフィールフォーム","This form changes automatically based on the package selected above.":"このフォームは上で選択したパッケージに応じて自動で切り替わります。","References / Inspiration links":"参考・インスピレーションのリンク","Required. Don’t skip this. Search with keywords such as SpaceHey profile, old web profile, MySpace layout, webcore, profile CSS, grunge web, or horror website.":"必須です。省略しないでください。SpaceHey profile、old web profile、MySpace layout、webcore、profile CSS、grunge web、horror website などで検索してください。","Upload reference images / sketches":"参考画像・スケッチをアップロード","Required. Upload screenshots, drawings, sketches, mockups, website references, or any image you want us to take inspiration from.":"必須です。スクリーンショット、イラスト、スケッチ、モックアップ、参考サイト、その他参考にしてほしい画像をアップロードしてください。","Important: this is where we will contact you and deliver your finished code.":"重要：このメールアドレスに連絡し、完成コードを納品します。","Username / Name":"ユーザー名 / 名前","Which package did you pay for?":"どのパッケージを支払いましたか？","Choose package":"パッケージを選択","Payment sender name":"振込名義","Your IBAN — refunds only":"あなたのIBAN — 返金専用","Required. This IBAN is only used if we need to return your payment because of a rejection or payment issue.":"必須です。注文拒否や支払い問題で返金が必要な場合にのみ使用します。","Receipt screenshot":"支払い明細の画像","What vibe do you want?":"どんな雰囲気にしたいですか？","Preferred colors":"希望する色","Do you want us to use your personal / avatar images?":"個人画像やアバター画像を使用しますか？","Choose one":"選択してください","Yes, I will upload them":"はい、アップロードします","No, use references only":"いいえ、参考画像のみ使用","Upload personal / avatar / profile images":"個人・アバター・プロフィール画像をアップロード","Optional. Use this for your avatar, profile picture, character images, face claim, or any personal images you want inside the profile.":"任意です。アバター、プロフィール写真、キャラクター画像、その他プロフィール内で使いたい個人画像をアップロードしてください。","About me text":"自己紹介文","Social links":"SNSリンク","Anything you don’t want?":"避けたいものはありますか？","I understand that this order is for personal use only. I am not allowed to resell, redistribute, share, publish, or upload the delivered code as a free or paid template.":"この注文は個人利用のみであり、納品されたコードを再販売、再配布、共有、公開、無料または有料テンプレートとしてアップロードできないことを理解しました。","SUBMIT BASIC ORDER":"ベーシック注文を送信","What should people feel when they enter your profile?":"訪問者にどんな気持ちになってほしいですか？","Sections you want":"必要なセクション","About Me":"自己紹介","Music":"音楽","Games":"ゲーム","Movies":"映画","Favorites":"お気に入り","Social Links":"SNSリンク","Mood":"ムード","Custom section":"カスタムセクション","SUBMIT STANDARD ORDER":"スタンダード注文を送信","Describe your full vibe":"全体の雰囲気を説明してください","Layout style":"レイアウトスタイル","Old web":"オールドウェブ","Dark":"ダーク","Cute":"かわいい","Horror":"ホラー","Glitch":"グリッチ","Clean":"クリーン","Grunge":"グランジ","Weird":"奇妙","Other":"その他","Things you absolutely don’t want":"絶対に避けたいもの","Any special text or quotes?":"特別な文章や引用はありますか？","SUBMIT FULL VIBE ORDER":"フルバイブ注文を送信","ITTPR ARCHIVE":"ITTPR アーカイブ","profiles made for real orders / previews / client vibes":"実際の注文 / プレビュー / クライアントの雰囲気","WORK 01":"制作 01","WORK 02":"制作 02","WORK 03":"制作 03","WORK 04":"制作 04","WORK 05":"制作 05","WORK 06":"制作 06","ITTPR TERMS":"ITTPR 利用条件","These rules apply to Basic, Standard, and Full Vibe.":"このルールはBasic、Standard、Full Vibeのすべてに適用されます。","EVERY PACKAGE INCLUDES":"すべてのパッケージに含まれるもの","Design for one profile only.":"1つのプロフィールのみのデザイン。","Personal use for the client.":"クライアント本人の個人利用。","Adding and arranging the client’s social links.":"クライアントのSNSリンクの追加と整理。","Making the design work on desktop and mobile as well as reasonably possible.":"可能な範囲でPCとスマートフォンに対応。","The client must provide all images, text, and links ready to use.":"クライアントは使用可能な画像、文章、リンクを用意する必要があります。","Final delivery as complete code with short installation instructions.":"完成コードと簡単な導入手順を納品。","NO PACKAGE INCLUDES":"どのパッケージにも含まれないもの","Designing a logo for the client.":"クライアント用ロゴのデザイン。","Creating, illustrating, or drawing images from scratch.":"画像やイラストをゼロから制作すること。","Writing long-form content instead of the client.":"クライアントの代わりに長文を書くこと。","Building a complete multi-page website.":"複数ページの完全なウェブサイト制作。","Building an online store, login system, or database.":"オンラインストア、ログイン機能、データベースの構築。","Completely changing the design concept after work has started.":"制作開始後にデザインコンセプトを完全変更すること。","Reselling, redistributing, sharing, or publishing the delivered code as a template.":"納品コードをテンプレートとして再販売、再配布、共有、公開すること。","Paste profiles, websites, image links, Pinterest boards, album covers, games, characters, or search results. Try keywords such as SpaceHey profile, old web profile, MySpace layout, webcore, profile CSS, grunge web, or horror website.":"プロフィール、サイト、画像リンク、Pinterestボード、アルバムカバー、ゲーム、キャラクター、検索結果を貼ってください。SpaceHey profile、old web profile、MySpace layout、webcore、profile CSS、grunge web、horror website などの検索語を試してください。","black, white, red":"黒、白、赤","no pink, no flashing effects, no bright colors":"ピンクなし、点滅なし、明るい色なし","no pink, no flashing effects, no scary images":"ピンクなし、点滅なし、怖い画像なし","About Me, Music, Games, Movies, Custom section...":"自己紹介、音楽、ゲーム、映画、カスタムセクション...","Language selector":"言語選択","Menu notes":"サイトメニュー","Works page":"制作実績ページ","Previous package":"前のパッケージ","Open order page for selected package":"選択したパッケージの注文ページを開く","Next package":"次のパッケージ","Package difference video":"パッケージ比較動画","ITTPR payment invoice":"ITTPR 支払い請求","Choose payment package":"支払いパッケージを選択","ITTPR works gallery":"ITTPR 制作実績ギャラリー","Common package rules":"全パッケージ共通ルール","Expanded package preview":"拡大パッケージプレビュー","IBAN COPIED":"IBANをコピーしました","Form design is ready. Connect this form to Tally, Formspree, Netlify Forms, or your backend before launch.":"フォームデザインは完成しています。公開前にTally、Formspree、Netlify Forms、またはバックエンドへ接続してください。","ACCOUNTS":"アカウント","ABOUT":"概要"}};
+    let currentLanguage = 'en';
+    const translatableTextNodes = [];
+    const translatableAttributes = [];
+
+    function normalizeTranslationText(value) {
+      return String(value || '').replace(/\s+/g, ' ').trim();
+    }
+
+    function translate(value, language = currentLanguage) {
+      const normalized = normalizeTranslationText(value);
+
+      if (!normalized || language === 'en') {
+        return normalized;
+      }
+
+      return translations[language]?.[normalized] || normalized;
+    }
+
+    function prepareTranslationNodes() {
+      const walker = document.createTreeWalker(
+        document.body,
+        NodeFilter.SHOW_TEXT,
+        {
+          acceptNode(node) {
+            const parent = node.parentElement;
+
+            if (!parent || parent.closest('script, style, [data-no-translate]')) {
+              return NodeFilter.FILTER_REJECT;
+            }
+
+            return normalizeTranslationText(node.nodeValue)
+              ? NodeFilter.FILTER_ACCEPT
+              : NodeFilter.FILTER_REJECT;
+          }
+        }
+      );
+
+      let node;
+
+      while ((node = walker.nextNode())) {
+        translatableTextNodes.push({
+          node,
+          original: normalizeTranslationText(node.nodeValue),
+          leading: node.nodeValue.match(/^\s*/)?.[0] || '',
+          trailing: node.nodeValue.match(/\s*$/)?.[0] || ''
+        });
+      }
+
+      document.querySelectorAll('[placeholder], [aria-label], [title]').forEach(element => {
+        ['placeholder', 'aria-label', 'title'].forEach(attribute => {
+          if (element.hasAttribute(attribute)) {
+            translatableAttributes.push({
+              element,
+              attribute,
+              original: normalizeTranslationText(element.getAttribute(attribute))
+            });
+          }
+        });
+      });
+    }
+
+    function applyStaticTranslations(language) {
+      translatableTextNodes.forEach(item => {
+        if (!item.node.isConnected) return;
+        item.node.nodeValue = item.leading + translate(item.original, language) + item.trailing;
+      });
+
+      translatableAttributes.forEach(item => {
+        if (!item.element.isConnected) return;
+        item.element.setAttribute(item.attribute, translate(item.original, language));
+      });
+
+      document.title = translate('ITTPR — Profile Vibe Store', language);
+    }
+
+    function setLanguage(language, save = true) {
+      const supported = ['en', 'ar', 'ru', 'ja'];
+      currentLanguage = supported.includes(language) ? language : 'en';
+
+      document.documentElement.lang = currentLanguage;
+      document.documentElement.dir = currentLanguage === 'ar' ? 'rtl' : 'ltr';
+
+      document.querySelectorAll('.lang-button').forEach(button => {
+        const active = button.dataset.lang === currentLanguage;
+        button.classList.toggle('active', active);
+        button.setAttribute('aria-pressed', String(active));
+      });
+
+      applyStaticTranslations(currentLanguage);
+      updatePackage();
+      updateInvoice();
+
+      if (save) {
+        localStorage.setItem('ittpr-language', currentLanguage);
+      }
+    }
+
+
+    const sectionLinks = Array.from(document.querySelectorAll('.section-link'));
+
+    function activateSectionLink(sectionId) {
+      sectionLinks.forEach(link => {
+        const isActive = link.dataset.section === sectionId;
+        link.classList.toggle('active', isActive);
+        link.setAttribute('aria-current', isActive ? 'page' : 'false');
+      });
+    }
+
+    function openMainSection(sectionId, smooth = true) {
+      const target = document.getElementById(sectionId);
+
+      if (!target) {
+        return;
+      }
+
+      document.body.classList.remove('show-order', 'show-works', 'show-rules');
+      activateSectionLink(sectionId);
+
+      history.replaceState(null, '', '#' + sectionId);
+
+      target.scrollIntoView({
+        behavior: smooth ? 'smooth' : 'auto',
+        block: 'start'
+      });
+    }
+
+    sectionLinks.forEach(link => {
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        openMainSection(link.dataset.section);
+      });
+    });
+
+    const packages = [
+      {
+        key: 'basic',
+        name: 'BASIC PROFILE',
+        invoiceName: 'Basic Profile',
+        formTitle: 'BASIC PROFILE FORM',
+        formId: 'basicForm',
+        price: '20 SAR',
+        recommended: false,
+        p1: 'assets/previews/basic-1.png',
+        p2: 'assets/previews/basic-2.png',
+        desc: 'A simple profile that gives your page a cleaner look and a bit more personality. Perfect if you just want your photos, links, and basic info to feel more like you.'
+      },
+      {
+        key: 'enhanced',
+        name: 'STANDARD PROFILE',
+        invoiceName: 'Standard Profile',
+        formTitle: 'STANDARD PROFILE FORM',
+        formId: 'enhancedForm',
+        price: '59 SAR',
+        recommended: true,
+        p1: 'assets/previews/standard-1.png',
+        p2: 'assets/previews/standard-2.png',
+        desc: 'For people who want more than just a basic profile. You get more space for your photos, interests, colors, and details, with a design that feels more personal and alive.'
+      },
+      {
+        key: 'full',
+        name: 'FULL VIBE PROFILE',
+        invoiceName: 'Full Vibe Profile',
+        formTitle: 'FULL VIBE PROFILE FORM',
+        formId: 'fullForm',
+        price: '99 SAR',
+        recommended: false,
+        p1: 'assets/previews/premium-1.png',
+        p2: 'assets/previews/premium-2.png',
+        desc: 'This is where we go all in. We build the whole profile around your style, your mood, and the way you want people to feel when they visit it.'
+      }
+    ];
+
+    let current = 1;
+
+    const packageName = document.getElementById('packageName');
+    const packagePrice = document.getElementById('packagePrice');
+    const packageRecommended = document.getElementById('packageRecommended');
+    const packageDesc = document.getElementById('packageDesc');
+    const preview1 = document.getElementById('preview1');
+    const preview2 = document.getElementById('preview2');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const openWorks = document.getElementById('openWorks');
+    const backButton = document.getElementById('backButton');
+    const imageLightbox = document.getElementById('imageLightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxBack = document.getElementById('lightboxBack');
+    const openOrderForm = document.getElementById('openOrderForm');
+    const formBack = document.getElementById('formBack');
+    const packageTitleBlock = document.getElementById('packageTitleBlock');
+    const selectedPackageName = document.getElementById('selectedPackageName');
+    const selectedPackagePrice = document.getElementById('selectedPackagePrice');
+    const manualFormTitle = document.getElementById('manualFormTitle');
+    const merchantIban = document.getElementById('merchantIban');
+    const copyIbanButton = document.getElementById('copyIbanButton');
+    const copyIbanStatus = document.getElementById('copyIbanStatus');
+    const openPackageRules = document.getElementById('openPackageRules');
+    const rulesBackButton = document.getElementById('rulesBackButton');
+
+    function getPackageIndexByKey(packageKey) {
+      const index = packages.findIndex(item => item.key === packageKey);
+      return index >= 0 ? index : 0;
+    }
+
+    function updatePackage() {
+      const item = packages[current];
+
+      packageName.textContent = translate(item.name);
+      packagePrice.textContent = item.price;
+      packageDesc.textContent = translate(item.desc);
+      packageRecommended.hidden = !item.recommended;
+      packageRecommended.textContent = translate('RECOMMENDED');
+
+      preview1.src = item.p1;
+      preview2.src = item.p2;
+      preview1.alt = item.invoiceName + ' preview 1';
+      preview2.alt = item.invoiceName + ' preview 2';
+    }
+
+    function updateInvoice() {
+      const item = packages[current];
+
+      selectedPackageName.textContent = translate(item.invoiceName);
+      selectedPackagePrice.textContent = item.price;
+      manualFormTitle.textContent = translate(item.formTitle);
+
+      document.querySelectorAll('.payment-package-choice').forEach(button => {
+        button.classList.toggle('active', button.dataset.package === item.key);
+      });
+
+      document.querySelectorAll('.manual-form').forEach(form => {
+        form.classList.remove('active');
+      });
+
+      const activeForm = document.getElementById(item.formId);
+
+      if (activeForm) {
+        activeForm.classList.add('active');
+
+        const paidPackageSelect = activeForm.querySelector('select[name="Paid Package"]');
+
+        if (paidPackageSelect) {
+          paidPackageSelect.value = item.invoiceName;
+        }
+      }
+    }
+
+    function selectPackage(packageKey) {
+      current = getPackageIndexByKey(packageKey);
+      updatePackage();
+      updateInvoice();
+    }
+
+    document.querySelectorAll('.payment-package-choice').forEach(button => {
+      button.addEventListener('click', () => selectPackage(button.dataset.package));
+    });
+
+    prevBtn.addEventListener('click', () => {
+      current = (current - 1 + packages.length) % packages.length;
+      updatePackage();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      current = (current + 1) % packages.length;
+      updatePackage();
+    });
+
+    function setWorksView(show) {
+      document.body.classList.toggle('show-works', show);
+
+      if (show) {
+        document.body.classList.remove('show-rules');
+        document.body.classList.remove('show-order');
+      }
+
+      window.scrollTo(0, 0);
+    }
+
+    function setRulesView(show) {
+      document.body.classList.toggle('show-rules', show);
+
+      if (show) {
+        document.body.classList.remove('show-works');
+        document.body.classList.remove('show-order');
+        history.replaceState(null, '', '#rules');
+      } else {
+        history.replaceState(null, '', '#shop');
+      }
+
+      window.scrollTo(0, 0);
+    }
+
+    function setOrderView(show) {
+      document.body.classList.toggle('show-order', show);
+
+      if (show) {
+        updateInvoice();
+        history.replaceState(null, '', '#order');
+      } else {
+        history.replaceState(null, '', '#shop');
+      }
+
+      window.scrollTo(0, 0);
+    }
+
+    function openImageLightbox(imageElement) {
+      lightboxImage.src = imageElement.src;
+      lightboxImage.alt = imageElement.alt || 'Full package preview';
+      imageLightbox.classList.add('is-open');
+      imageLightbox.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('lightbox-open');
+    }
+
+    function closeImageLightbox() {
+      imageLightbox.classList.remove('is-open');
+      imageLightbox.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('lightbox-open');
+      lightboxImage.src = '';
+    }
+
+    document.querySelectorAll('.previews img').forEach(img => {
+      img.addEventListener('click', () => openImageLightbox(img));
+    });
+
+    lightboxBack.addEventListener('click', closeImageLightbox);
+
+    imageLightbox.addEventListener('click', event => {
+      if (event.target === imageLightbox) closeImageLightbox();
+    });
+
+    window.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        closeImageLightbox();
+        if (document.body.classList.contains('show-order')) setOrderView(false);
+        if (document.body.classList.contains('show-rules')) setRulesView(false);
+      }
+    });
+
+    openPackageRules.addEventListener('click', () => setRulesView(true));
+    rulesBackButton.addEventListener('click', () => setRulesView(false));
+
+    openOrderForm.addEventListener('click', () => setOrderView(true));
+    packageTitleBlock.addEventListener('click', () => setOrderView(true));
+
+    packageTitleBlock.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        setOrderView(true);
+      }
+    });
+
+    formBack.addEventListener('click', () => setOrderView(false));
+
+    copyIbanButton.addEventListener('click', async () => {
+      const ibanValue = merchantIban.textContent.replace(/\s+/g, '');
+
+      try {
+        await navigator.clipboard.writeText(ibanValue);
+      } catch (error) {
+        const temporaryInput = document.createElement('input');
+        temporaryInput.value = ibanValue;
+        document.body.appendChild(temporaryInput);
+        temporaryInput.select();
+        document.execCommand('copy');
+        temporaryInput.remove();
+      }
+
+      copyIbanStatus.textContent = translate('IBAN COPIED');
+      window.setTimeout(() => copyIbanStatus.textContent = '', 2200);
+    });
+
+    function createOrderReference() {
+      const date = new Date();
+      const datePart = date.toISOString().slice(0, 10).replaceAll('-', '');
+      const randomPart = Math.random().toString(36).slice(2, 7).toUpperCase();
+      return `ITTPR-${datePart}-${randomPart}`;
+    }
+
+    document.querySelectorAll('.manual-form').forEach(form => {
+      form.addEventListener('submit', () => {
+        const packageName =
+          form.querySelector('input[name="Order Package"]')?.value || 'ITTPR ORDER';
+        const customerName =
+          form.querySelector('[name="Username / Name"]')?.value.trim() || 'NEW CLIENT';
+
+        form.querySelector('.submission-language').value = currentLanguage.toUpperCase();
+        form.querySelector('.submission-time').value = new Date().toLocaleString();
+        form.querySelector('.submission-reference').value = createOrderReference();
+        form.querySelector('.submission-page').value = window.location.href;
+
+        const subjectInput = form.querySelector('input[name="_subject"]');
+        subjectInput.value = `NEW ITTPR ORDER — ${packageName.toUpperCase()} — ${customerName}`;
+
+        const submitButton = form.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.dataset.originalText = submitButton.textContent;
+        submitButton.textContent = 'SENDING ORDER...';
+      });
+    });
+
+    openWorks.addEventListener('click', event => {
+      event.preventDefault();
+      setWorksView(true);
+      history.replaceState(null, '', '#works');
+    });
+
+    backButton.addEventListener('click', event => {
+      event.preventDefault();
+      setWorksView(false);
+      history.replaceState(null, '', '#shop');
+    });
+
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash;
+      const sectionId = hash.replace('#', '');
+
+      document.body.classList.toggle('show-works', hash === '#works');
+      document.body.classList.toggle('show-rules', hash === '#rules');
+      document.body.classList.toggle('show-order', hash === '#order');
+
+      if (hash === '#order') {
+        updateInvoice();
+      }
+
+      if (['shop', 'packages', 'accounts', 'about'].includes(sectionId)) {
+        activateSectionLink(sectionId);
+      }
+
+      window.scrollTo(0, 0);
+    });
+
+    document.body.classList.toggle('show-works', window.location.hash === '#works');
+    document.body.classList.toggle('show-rules', window.location.hash === '#rules');
+
+    if (window.location.hash === '#order') {
+      document.body.classList.add('show-order');
+    }
+
+
+    document.querySelectorAll('.lang-button').forEach(button => {
+      button.addEventListener('click', () => {
+        setLanguage(button.dataset.lang);
+      });
+    });
+
+    prepareTranslationNodes();
+    setLanguage(localStorage.getItem('ittpr-language') || 'en', false);
+
+    const initialSection = window.location.hash.replace('#', '');
+    activateSectionLink(
+      ['shop', 'packages', 'accounts', 'about'].includes(initialSection)
+        ? initialSection
+        : 'shop'
+    );
+  </script>
+</body>
+</html>
