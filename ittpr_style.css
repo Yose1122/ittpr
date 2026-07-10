@@ -1915,3 +1915,355 @@ html[dir="rtl"] .menu-note .section-link.active::after {
   opacity: .65;
   animation: none !important;
 }
+
+
+/* =========================================================
+   MOBILE HOMEPAGE — KEEP THE DESKTOP TWO-COLUMN LOOK
+   Sidebar stays beside the packages instead of stacking.
+   ========================================================= */
+@media (max-width: 760px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .page {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto 22px;
+    padding: 0 7px;
+  }
+
+  .hero {
+    margin-bottom: 7px;
+  }
+
+  .hero img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Keep the left sidebar and main shop side by side */
+  .main-layout {
+    width: 100%;
+    display: grid;
+    grid-template-columns:
+      minmax(104px, 27vw)
+      1px
+      minmax(0, 1fr);
+    gap: 7px;
+    align-items: start;
+  }
+
+  .side {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .v-line {
+    width: 1px;
+    height: auto;
+    min-height: 720px;
+    align-self: stretch;
+    background: #fff;
+  }
+
+  .shop {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .package-panel {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+  }
+
+  /* Compact sidebar, same structure as desktop */
+  .langs {
+    gap: 5px;
+    margin-bottom: 7px;
+    font-size: 9px;
+    letter-spacing: .5px;
+    white-space: nowrap;
+  }
+
+  .langs .lang-button {
+    min-width: 0;
+    padding: 2px 3px;
+    font-size: 9px;
+  }
+
+  .menu-note {
+    gap: 3px;
+    margin-bottom: 9px;
+    font-size: 9px;
+    letter-spacing: 1.4px;
+  }
+
+  .menu-note .section-link {
+    max-width: calc(100% - 14px);
+    padding: 1px 3px;
+    white-space: nowrap;
+  }
+
+  .menu-note .section-link.active::before,
+  .menu-note .section-link.active::after {
+    width: 4px;
+  }
+
+  .menu-note .section-link.active::before {
+    right: calc(100% + 2px);
+  }
+
+  .menu-note .section-link.active::after {
+    left: calc(100% + 2px);
+  }
+
+  .side-logo {
+    width: min(88px, 78%);
+    margin-bottom: 8px;
+  }
+
+  .store-copy {
+    width: 100%;
+    padding: 0 2px;
+    margin-bottom: 8px;
+    font-size: 7.7px;
+    line-height: 1.28;
+    text-align: left;
+    overflow-wrap: anywhere;
+  }
+
+  .store-copy p {
+    margin-bottom: 6px;
+  }
+
+  .store-copy-ending {
+    font-size: 8px;
+    line-height: 1.25;
+  }
+
+  .left-separator {
+    width: 88%;
+    margin: 7px auto 8px;
+  }
+
+  .accounts {
+    gap: 4px;
+    font-size: 7.7px;
+    line-height: 1.15;
+  }
+
+  .accounts a {
+    gap: 3px;
+    padding-bottom: 2px;
+    min-width: 0;
+  }
+
+  .accounts a span,
+  .accounts a b {
+    min-width: 0;
+  }
+
+  .accounts a b {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .works-entry {
+    padding-top: 7px;
+  }
+
+  .works-entry a {
+    padding: 4px 0 2px;
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .works-entry span {
+    margin-top: 2px;
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  /* Compact package area without breaking it */
+  .package-switcher {
+    grid-template-columns: 22px minmax(0, 1fr) 22px;
+    gap: 2px;
+    margin: 0 auto 5px;
+  }
+
+  .package-title-block {
+    min-height: 88px;
+    padding: 5px 0 4px;
+    overflow: hidden;
+  }
+
+  .package-price {
+    margin-bottom: 4px;
+    font-size: clamp(15px, 4.5vw, 21px);
+    letter-spacing: 2px;
+  }
+
+  .fog-title {
+    width: 100%;
+    max-width: 100%;
+    padding: 4px 2px;
+    font-size: clamp(16px, 5.2vw, 26px);
+    line-height: 1.08;
+    letter-spacing: 1px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .package-recommended {
+    margin-top: 2px;
+    font-size: 7px;
+    letter-spacing: 1.7px;
+  }
+
+  .arrow {
+    padding: 0;
+    font-size: 27px;
+  }
+
+  .previews {
+    gap: 7px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+  }
+
+  .previews img:hover {
+    transform: none;
+  }
+
+  .description {
+    min-height: 66px;
+    padding: 4px 7px 7px;
+    font-size: 10px;
+    line-height: 1.3;
+  }
+
+  .package-rules-button {
+    margin: 2px auto 5px;
+    padding: 4px 5px 3px;
+    font-size: 7px;
+    letter-spacing: 1.2px;
+  }
+
+  .package-rules-separator {
+    width: 70%;
+    margin-bottom: 5px;
+  }
+
+  .order {
+    margin: 7px auto 6px;
+    padding: 5px 6px;
+    font-size: 8px;
+    letter-spacing: 1.4px;
+  }
+
+  .order-separator {
+    width: 88%;
+    margin-bottom: 9px;
+  }
+
+  .package-video-label {
+    margin-bottom: 5px;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .video-frame video {
+    max-height: none;
+  }
+
+  /* Keep Arabic layout compact without reversing the desktop structure */
+  html[dir="rtl"] .main-layout {
+    direction: ltr;
+  }
+
+  html[dir="rtl"] .side,
+  html[dir="rtl"] .shop {
+    direction: rtl;
+  }
+
+  html[dir="rtl"] .store-copy {
+    text-align: right;
+  }
+
+  html[lang="ar"] .package-title-block,
+  html[lang="ja"] .package-title-block {
+    min-height: 94px;
+  }
+}
+
+/* Extra-small phones */
+@media (max-width: 420px) {
+  .page {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .main-layout {
+    grid-template-columns:
+      minmax(96px, 28vw)
+      1px
+      minmax(0, 1fr);
+    gap: 5px;
+  }
+
+  .v-line {
+    min-height: 660px;
+  }
+
+  .langs {
+    gap: 3px;
+    font-size: 8px;
+  }
+
+  .langs .lang-button {
+    font-size: 8px;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  .menu-note {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .side-logo {
+    width: min(78px, 78%);
+  }
+
+  .store-copy {
+    font-size: 7px;
+  }
+
+  .accounts {
+    font-size: 7px;
+  }
+
+  .package-switcher {
+    grid-template-columns: 18px minmax(0, 1fr) 18px;
+  }
+
+  .fog-title {
+    font-size: clamp(14px, 5vw, 21px);
+  }
+
+  .arrow {
+    font-size: 23px;
+  }
+
+  .description {
+    font-size: 9px;
+  }
+}
