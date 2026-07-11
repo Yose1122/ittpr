@@ -2439,3 +2439,50 @@ html[dir="rtl"] .form-section-title span {
     padding: 22px 15px;
   }
 }
+
+
+/* SEPARATE FILE INPUTS — every image is sent as its own attachment */
+.file-upload-group {
+  display: grid;
+  gap: 9px;
+  margin: 14px 0 18px;
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,.35);
+  background: rgba(255,255,255,.025);
+}
+
+.file-upload-group-title {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 2px;
+  text-align: left;
+}
+
+.file-upload-group-title b {
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  color: #fff;
+}
+
+.file-upload-group label {
+  margin: 0;
+}
+
+.file-upload-group input[type="file"] {
+  width: 100%;
+}
+
+html[dir="rtl"] .file-upload-group-title {
+  text-align: right;
+}
+
+@media (max-width: 760px) {
+  .file-upload-group {
+    padding: 9px;
+    gap: 7px;
+  }
+
+  .file-upload-group-title b {
+    font-size: 12px;
+  }
+}
