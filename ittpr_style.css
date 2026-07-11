@@ -2267,3 +2267,184 @@ html[dir="rtl"] .menu-note .section-link.active::after {
     font-size: 9px;
   }
 }
+
+
+/* ITTPR_RELIABLE_ORDER_SYSTEM_V1 */
+.form-section-title {
+  margin: 25px 0 5px;
+  padding: 10px 11px 8px;
+  border-top: 1px solid rgba(255,255,255,.7);
+  border-bottom: 1px dotted rgba(255,255,255,.35);
+  text-align: left;
+}
+
+.form-section-title span {
+  display: inline-block;
+  margin-right: 8px;
+  color: #777;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.form-section-title b {
+  color: #fff;
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 3px;
+  text-shadow: 0 0 6px rgba(255,255,255,.45);
+}
+
+.form-section-title small {
+  display: block;
+  margin-top: 5px;
+  color: #999;
+  font-size: 12px;
+  line-height: 1.35;
+  letter-spacing: .5px;
+}
+
+.draft-save-note,
+.form-submit-status {
+  max-width: 570px;
+  margin: 10px auto 0;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.draft-save-note {
+  color: #777;
+}
+
+.form-submit-status {
+  min-height: 18px;
+  color: #aaa;
+}
+
+.form-submit-status[data-state="error"] {
+  color: #ff4949;
+  text-shadow: 0 0 7px rgba(255,0,0,.48);
+}
+
+.form-submit-status[data-state="sending"] {
+  color: #fff;
+  animation: activeMenuGlow .7s ease-in-out infinite alternate;
+}
+
+.customer-email,
+.confirm-email {
+  direction: ltr;
+  text-align: left;
+}
+
+.submission-success-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  place-items: center;
+  padding: 18px;
+  overflow-y: auto;
+  background: rgba(0,0,0,.98);
+}
+
+body.order-sent .submission-success-screen {
+  display: grid;
+}
+
+.submission-success-card {
+  width: min(570px, 100%);
+  padding: 26px 22px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 0 38px rgba(255,255,255,.08);
+}
+
+.success-kicker {
+  margin: 0 0 5px;
+  color: #50e676;
+  font-size: 13px;
+  letter-spacing: 5px;
+  text-shadow: 0 0 9px rgba(35,255,95,.55);
+}
+
+.submission-success-card h2 {
+  margin: 0 0 20px;
+  font-size: clamp(28px, 6vw, 52px);
+  line-height: 1.05;
+  letter-spacing: 4px;
+  text-shadow: 0 0 7px rgba(255,255,255,.55);
+}
+
+.success-reference-label {
+  margin: 0 0 4px;
+  color: #888;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+#successOrderReference {
+  display: block;
+  margin-bottom: 18px;
+  color: #fff;
+  font-size: clamp(18px, 4vw, 27px);
+  letter-spacing: 2px;
+  user-select: all;
+}
+
+.submission-success-card > p:not(.success-kicker):not(.success-reference-label) {
+  color: #ccc;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.submission-success-card .success-important {
+  color: #fff;
+}
+
+#successBackToStore {
+  margin-top: 13px;
+  padding: 8px 14px;
+  border: 0;
+  background: transparent;
+  color: #ff3b3b;
+  cursor: pointer;
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-shadow: 0 0 8px rgba(255,0,0,.62);
+}
+
+#successBackToStore:hover {
+  background: #ff3b3b;
+  color: #000;
+  text-shadow: none;
+}
+
+html[dir="rtl"] .form-section-title {
+  text-align: right;
+}
+
+html[dir="rtl"] .form-section-title span {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+@media (max-width: 760px) {
+  .form-section-title {
+    margin-top: 20px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .form-section-title b {
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  .submission-success-card {
+    padding: 22px 15px;
+  }
+}
