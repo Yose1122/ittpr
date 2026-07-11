@@ -1891,15 +1891,6 @@ html[dir="rtl"] .menu-note .section-link.active::after {
 
 
 /* LIVE EMAIL ORDER DELIVERY */
-.form-honeypot {
-  position: absolute !important;
-  left: -99999px !important;
-  width: 1px !important;
-  height: 1px !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-}
-
 .form-delivery-note {
   max-width: 560px;
   margin: 7px auto 0;
